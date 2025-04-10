@@ -18,9 +18,9 @@ Esta API permite que o **proprietário autenticado de um canal do YouTube** list
 
 ## Política de Privacidade
 
-**Última atualização:** [Data da Última Atualização - ex: 10 de Abril de 2025]
+**Última atualização:** 10/04/2025
 
-Esta Política de Privacidade descreve como [Seu Nome ou Nome da Empresa] ("nós", "nosso") coleta, usa e protege as informações em conexão com o uso do [Nome do Seu Aplicativo/API] ("Serviço").
+Esta Política de Privacidade descreve como João Vitor Machado ("nós", "nosso") coleta, usa e protege as informações em conexão com o uso do Nerdpack Members List ("Serviço").
 
 **1. Informações que Coletamos:**
 
@@ -48,7 +48,7 @@ Esta Política de Privacidade descreve como [Seu Nome ou Nome da Empresa] ("nós
 
 **5. Retenção de Dados:**
 
-* Armazenamos seu token de atualização do Google enquanto você mantiver a autorização ativa para permitir o funcionamento contínuo do serviço. Você pode revogar o acesso a qualquer momento através das configurações da sua Conta Google ([link: https://myaccount.google.com/permissions]). Após a revogação, não poderemos mais acessar seus dados do YouTube.
+* Armazenamos seu token de atualização do Google enquanto você mantiver a autorização ativa para permitir o funcionamento contínuo do serviço. Você pode revogar o acesso a qualquer momento através das configurações da sua Conta Google ([link: https://myaccount.google.com/permissions](https://myaccount.google.com/permissions)). Após a revogação, não poderemos mais acessar seus dados do YouTube.
 * Não armazenamos persistentemente a lista de membros do seu canal. Os dados são buscados da API do YouTube em tempo real quando você faz uma solicitação à nossa API.
 
 **6. Seus Direitos:**
@@ -58,16 +58,17 @@ Esta Política de Privacidade descreve como [Seu Nome ou Nome da Empresa] ("nós
 
 **7. Uso de Dados da API do YouTube:**
 
-* Este Serviço usa as APIs do YouTube. Ao usar este Serviço, você também concorda em estar vinculado aos Termos de Serviço do YouTube ([link: https://www.youtube.com/t/terms]).
+* Este Serviço usa as APIs do YouTube. Ao usar este Serviço, você também concorda em estar vinculado aos Termos de Serviço do YouTube ([link: https://www.youtube.com/t/terms](https://www.youtube.com/t/terms)).
 * Utilizamos os dados recebidos das APIs do YouTube estritamente para fornecer a funcionalidade descrita (listar membros para o proprietário do canal).
-* A gestão e proteção da privacidade dos dados obtidos através das APIs do YouTube seguem as Políticas de Desenvolvedor das APIs do Google ([link: https://developers.google.com/terms/api-services-user-data-policy]).
+* A gestão e proteção da privacidade dos dados obtidos através das APIs do YouTube seguem as Políticas de Desenvolvedor das APIs do Google ([link: https://developers.google.com/terms/api-services-user-data-policy](https://developers.google.com/terms/api-services-user-data-policy)).
 
 **8. Contato:**
 
 * Se tiver dúvidas sobre esta Política de Privacidade, entre em contato conosco em: joaovmmachado@gmail.com
+
 ---
 
-## Termos de Serviço (Opcional, mas Recomendado)
+## Termos de Serviço
 
 **Última atualização:** 10/04/2025
 
@@ -84,3 +85,99 @@ Estes Termos de Serviço regem o seu acesso e uso do Nerdpack Members List ("Ser
 ---
 
 *Desenvolvido por João Vitor Machado*
+
+---
+
+---
+
+# English Version
+
+---
+
+# Welcome to Nerdpack Members List
+
+This page provides information about Nerdpack Members List, a backend tool designed to help YouTube content creators manage and interact with their channel members.
+
+**API URL:** `https://youtube-members-637187041093.us-central1.run.app` (Only specific endpoints are accessible and require API key authentication).
+
+---
+
+## What does this API do?
+
+This API allows the **authenticated owner of a YouTube channel** to list their own channel's current members. The main functionality is providing an endpoint (`/youtube/members/all`) that returns a list of member channel IDs and their subscription levels.
+
+**Primary Use Case:** The channel owner can use this list to integrate with their own systems (website, application, Discord, etc.) to verify if a user is an active member and grant special benefits or permissions.
+
+**Important:** This API is a backend tool. It does not have its own user interface for channel members or the general public. Data access is controlled by the channel owner via secure API keys.
+
+---
+
+## Privacy Policy
+
+**Last updated:** April 10, 2025
+
+This Privacy Policy describes how João Vitor Machado ("we", "us", "our") collects, uses, and protects information in connection with the use of the Nerdpack Members List ("Service").
+
+**1. Information We Collect:**
+
+* **Google Authentication Data (Channel Owner):** When you (the channel owner) authenticate using your Google Account to authorize the Service's access to your YouTube data, we receive an access token and a refresh token from Google. We securely store the **refresh token** ([Briefly describe how: e.g., "in a protected file on the server", "using Google Secret Manager"]) to allow the Service to access your YouTube data on your behalf, as authorized. We do not store your Google password.
+* **YouTube API Data:** When authorized by you, the Service accesses the YouTube Data API to retrieve:
+    * Your channel's members list (including member's channel ID, public display name, public profile picture URL, membership start date, and membership level name). This is done using the `youtube.channel-memberships.creator` scope.
+    * Your own YouTube channel ID to ensure we are querying the correct data. This is done using the `youtube.readonly` scope.
+* **API Keys:** We store the API keys you configure to allow programmatic access to your backend API endpoints.
+
+**2. How We Use Information:**
+
+* To provide the core functionality of the Service: listing your channel members when requested by you via an authenticated API call (using your API key).
+* To authenticate and authorize access to your YouTube data according to your permissions.
+* To maintain and improve the Service.
+
+**3. Information Sharing:**
+
+* **We DO NOT share your Google authentication tokens or your channel members' data with third parties.**
+* Your channel members' data (list of IDs, names, levels) is accessible **only to you** through the endpoints protected by your API key. It is your responsibility to protect your API key and how you use this data in your own systems.
+* We may share information if required by law or to protect our rights.
+
+**4. Data Security:**
+
+* We employ security measures to protect the information under our control, including secure storage of the refresh token and the use of API keys for data access. The service runs on secure Google Cloud Run infrastructure.
+
+**5. Data Retention:**
+
+* We store your Google refresh token as long as you maintain active authorization to allow the service to function continuously. You can revoke access at any time through your Google Account settings ([link: https://myaccount.google.com/permissions](https://myaccount.google.com/permissions)). Upon revocation, we will no longer be able to access your YouTube data.
+* We do not persistently store your channel's members list. The data is fetched from the YouTube API in real-time when you make a request to our API.
+
+**6. Your Rights:**
+
+* You have the right to revoke the Service's access to your YouTube data at any time via your Google Account settings.
+* You have control over who can access your members' data through the management of your API keys.
+
+**7. Use of YouTube API Data:**
+
+* This Service uses YouTube APIs. By using this Service, you also agree to be bound by the YouTube Terms of Service ([link: https://www.youtube.com/t/terms](https://www.youtube.com/t/terms)).
+* We use data received from YouTube APIs strictly to provide the described functionality (listing members for the channel owner).
+* The management and protection of data privacy obtained through the YouTube APIs adhere to the Google API Services User Data Policy ([link: https://developers.google.com/terms/api-services-user-data-policy](https://developers.google.com/terms/api-services-user-data-policy)).
+
+**8. Contact:**
+
+* If you have questions about this Privacy Policy, please contact us at: joaovmmachado@gmail.com
+
+---
+
+## Terms of Service
+
+**Last updated:** April 10, 2025
+
+These Terms of Service govern your access to and use of the Nerdpack Members List ("Service").
+
+1.  **Acceptance of Terms:** By accessing or using the Service, you agree to comply with these Terms.
+2.  **Use of Service:** The Service is intended solely for YouTube channel owners to list their own channel members. You are responsible for safeguarding your Google authentication credentials and your API keys.
+3.  **YouTube Data:** The use of data obtained through the YouTube APIs is subject to the YouTube Terms of Service and relevant developer policies. You are responsible for how you use the member data obtained through this Service in your own systems.
+4.  **Availability:** We will make reasonable efforts to keep the Service operational, but we do not guarantee uninterrupted availability.
+5.  **Limitation of Liability:** The Service is provided "as is". We are not liable for any direct or indirect damages arising from the use or inability to use the Service.
+6.  **Modifications:** We may revise these Terms periodically. The most current version will always be available on this page.
+7.  **Contact:** joaovmmachado@gmail.com
+
+---
+
+*Developed by João Vitor Machado*
